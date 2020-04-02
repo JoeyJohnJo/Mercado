@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           prefHeight="470.0" prefWidth="900.0" fx:controller="mercado.controllers.FinalizarCompra" fx:id="rootFinalizar">
+    <BorderPane>
+           <top>
+               <VBox alignment="CENTER" fx:id="top">
+                   <Label text="R$ Total"/>
+                   <Label fx:id="total"/>
+
+                   <Label text="Cliente cadastrado?"/>
+
+               </VBox>
+           </top>
+        <center>
+            <VBox alignment="CENTER">
+                <Label text="Valor recebido"/>
+                <TextField fx:id="valorRecebido" />
+                <Label text="Troco"/>
+                <Label fx:id="troco" />
+            </VBox>
+        </center>
+        <bottom>
+            <HBox fx:id="buttons">
+                <Button text="VOLTAR" fx:id="bVoltar" onAction="#voltar"/>
+            </HBox>
+        </bottom>
+    </BorderPane>
+</StackPane>
+

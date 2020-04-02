@@ -1,0 +1,99 @@
+.button{
+    -fx-text-fill: white;
+    -fx-text-align: center;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 2px;
+    -fx-padding: 14px 40px;
+    -fx-outline: none;
+    -fx-color: white;
+    -fx-border-radius: 24px;
+    -fx-background-radius: 22px;
+    -fx-background-color: transparent;
+    -fx-transition: 0.25s;
+}
+
+.button:hover, #botaoAdicionar:hover{
+   -fx-background-color: #8844ee;
+}
+#titulo {
+    -fx-font-size: 30px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+#campoNome:focused, #campoQtd:focused, #campoCod:focused{
+    -fx-border-color: rgb(109, 29, 29);
+}
+#campoNome, #campoCod {
+    -fx-background-color: transparent;
+    -fx-text-align: center;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 2px;
+    -fx-min-width: 110px;
+    -fx-outline: none;
+    -fx-text-fill: white;
+    -fx-border-radius: 24px;
+    -fx-min-height: 50px;
+}
+#campoQtd {
+    -fx-background-color: transparent;
+    -fx-text-align: center;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 2px;
+    -fx-min-width: 100px;
+    -fx-min-height: 50px;
+    -fx-outline: none;
+    -fx-text-fill: white;
+    -fx-border-radius: 24px;
+    -fx-padding: 0px;
+}
+#botaoAdicionar {
+    -fx-text-fill: white;
+    -fx-text-align: center;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 2px;
+    -fx-padding: 0px;
+    -fx-outline: none;
+    -fx-color: white;
+    -fx-border-radius: 24px;
+    -fx-background-radius: 22px;
+    -fx-background-color: transparent;
+    -fx-transition: 0.25s;
+    -fx-min-width: 100px;
+    -fx-min-height: 50px;
+}
+
+.table-view {
+    -fx-background-color: #303030;
+    -fx-border-collapse: collapse;
+    -fx-border-width: 2px;
+    -fx-border-color: #8844ee;
+}
+.table-view .table-column {
+    -fx-alignment: CENTER;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 0 0 0 1px;
+}
+.table-view .column-header .text {
+    -fx-font-weight: bold;
+    -fx-fill: white;
+}
+.table-view .column-header{
+    -fx-background-color: #8844ee;
+    -fx-border-color: #8844ee;
+
+}
+.table-row-cell{
+    -fx-background-color: #303030;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 1px;
+}
+.table-row-cell .text {
+    -fx-fill: white;
+    -fx-font-weight: bold;
+}
+.table-row-cell:hover{
+    -fx-background-color: #a673f2;
+}
+.table-row-cell:selected{
+    -fx-background-color: #a673f2;
+}

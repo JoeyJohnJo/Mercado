@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefHeight="600.0" maxWidth="800.0"
+           fx:controller="mercado.controllers.CadastrarCliente" fx:id="rootCC">
+    <VBox fx:id="base">
+        <children>
+            <HBox alignment="CENTER">
+                <children>
+                    <Label text="CADASTRAR CLIENTE" fx:id="titulo"/>
+                </children>
+            </HBox>
+            <VBox alignment="CENTER">
+                <children>
+                    <Label prefWidth="100" prefHeight="30" />
+                    <TextField fx:id="campoNome" alignment="CENTER"/>
+                </children>
+            </VBox>
+            <VBox alignment="CENTER">
+                <children>
+                    <Label prefWidth="100" prefHeight="30" />
+                    <TextField alignment="CENTER" fx:id="campoEndereco"/>
+                </children>
+            </VBox>
+            <VBox alignment="CENTER">
+                <children>
+                    <Label prefWidth="100" prefHeight="30" />
+
+                    <HBox alignment="CENTER" spacing="20">
+                        <children>
+                            <TextField fx:id="campoTelefone" alignment="CENTER"/>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+            <BorderPane fx:id="borderBotao">
+                <bottom>
+                    <HBox alignment="CENTER" fx:id="confirmar">
+                        <children>
+                            <Button text="Primeira Compra" prefWidth="200" prefHeight="40" fx:id="botaoProdutos" onAction="#carregarTelaDefinirProdutos"/>
+                            <Button text="Cadastrar" prefWidth="200" prefHeight="40" fx:id="botaoCadastrar" onAction="#cadastrar"/>
+                        </children>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+        </children>
+    </VBox>
+</StackPane>

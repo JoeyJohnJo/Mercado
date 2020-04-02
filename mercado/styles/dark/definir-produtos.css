@@ -1,0 +1,184 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    background: rgb(109, 29, 29);
+}
+
+.box{
+    min-width: 100%;
+    height: 100%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #212121;
+    text-align: center;
+}
+.box h1{
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+}
+.box input[type="submit"]{
+    display: block;
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #8844ee;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.box input[type="submit"]:hover{
+    background: #8844ee;
+}
+
+.diferentao input[type="text"]{
+    display: inline;
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #8844ee;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.diferentao input[type="text"]:focus{
+    width: 280px;
+    border-color: rgb(109, 29, 29);
+}
+.diferentao input[type="button"]{
+    display: inline;
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #8844ee;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.diferentao input[type="button"]:hover{
+    background: #8844ee;
+}
+.diferentao input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.diferentao input[type="number"]{
+    display: inline;
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #8844ee;
+    padding: 14px 10px;
+    width: 80px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.diferentao input[type="number"]:focus{
+    border-color: rgb(109, 29, 29);
+}
+
+.tabela{
+    margin: 20px auto;
+    width: 400px;
+    max-height: 400px;
+    overflow: auto;
+}
+#tabela{
+    border-collapse: collapse;
+    border: 2px solid #8844ee;
+    margin: 20px auto;
+    color: white;
+    text-transform: capitalize;
+}
+#tabela th, td{
+    border: 1px solid #8844ee;
+    padding: 10px 20px;
+}
+#tabela th{
+    background: #8844ee;
+}
+
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.mostrar{
+    display: flex;
+}
+.modal{
+    background: #212121;
+    width: 40%;
+    min-width: 80px;
+    padding: 40px;
+    border: 10px solid #8844ee;
+    position: relative;
+}
+
+.modal p{
+    color: white;
+    text-align: center;
+    font-family: Arial;
+    font-size: 12pt;
+}
+.modal input[type="button"]{
+    width: 100%;
+    display: inline;
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #8844ee;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.modal input[id="cancelar"], .modal input[id="confirmar"]{
+    width: 49%;
+}
+.modal input[type="button"]:hover{
+    background: #8844ee;
+}
+@keyframes modal{
+    from{
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+.mostrar .modal{
+    animation: modal .3s;
+}

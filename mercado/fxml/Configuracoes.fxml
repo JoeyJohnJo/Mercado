@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           prefHeight="600.0" prefWidth="1.7976931348623157E308" maxWidth="1.7976931348623157E308" fx:id="rootConfig" fx:controller="mercado.controllers.Configuracoes">
+    <BorderPane fx:id="borderPane">
+        <center>
+                <ScrollPane minWidth="600" minHeight="500" fitToHeight="true" fitToWidth="true">
+                    <VBox spacing="10">
+                    <Label text="TEMA" fx:id="t1" />
+                        <HBox spacing="10">
+                            <Label text="Tema: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <MenuButton fx:id="mTema" text="Tema" prefHeight="30" prefWidth="150" alignment="CENTER">
+                                <items>
+                                    <MenuItem text="Tema escuro" fx:id="temaDark"/>
+                                    <MenuItem text="Tema claro" fx:id="temaLight"/>
+                                </items>
+                            </MenuButton>
+                        </HBox>
+                        <Label text="ATALHOS" fx:id="t2"/>
+                        <HBox spacing="10">
+                            <Label text="Ver Estoque: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tVerEstoque" alignment="CENTER"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Inserir Estoque: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tInserirEstoque" alignment="CENTER"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Ver Produtos: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tVerProduto" alignment="CENTER"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Cadastrar Produto: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tCadastrarProduto"  alignment="CENTER">
+                            </TextField>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Ver Clientes: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tVerClientes" alignment="CENTER">
+                            </TextField>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Cadastrar Clientes: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tCadastrarClientes" alignment="CENTER"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Historico de Entradas: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tEntradas" alignment="CENTER"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Historico de Vendas: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tHistorico" alignment="CENTER"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Rendimento e Gastos: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tRendaeGastos" alignment="CENTER"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Configurações: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tConfig" alignment="CENTER"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Ver Alertas: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tVerAlertas" alignment="CENTER"/>
+                        </HBox>
+                        <Label text="ALERTAS" fx:id="t3"/>
+                        <HBox spacing="10">
+                            <Label text="Quantidade mínima no estoque: " alignment="CENTER" prefWidth="200" prefHeight="30"/>
+                            <TextField fx:id="tQtdEstoque" alignment="CENTER"/>
+                        </HBox>
+                        <HBox spacing="10" alignment="CENTER" fx:id="salvar">
+                            <Button text="Salvar" alignment="CENTER" onAction="#salvar" fx:id="botao"/>
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+        </center>
+    </BorderPane>
+</StackPane>

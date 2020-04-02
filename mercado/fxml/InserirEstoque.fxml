@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="mercado.controllers.InserirEstoque" prefHeight="600.0" maxWidth="800.0" fx:id="rootIE">
+    <VBox fx:id="base">
+        <children>
+            <HBox alignment="CENTER">
+                <children>
+                    <Label text="INSERIR NO ESTOQUE" fx:id="titulo"/>
+                </children>
+            </HBox>
+            <VBox alignment="CENTER">
+                <children>
+                    <Label prefWidth="100" prefHeight="30" />
+                    <TextField fx:id="campoCodigo" alignment="CENTER"/>
+                </children>
+            </VBox>
+            <VBox alignment="CENTER">
+                <children>
+                    <Label prefWidth="100" prefHeight="30" />
+                    <TextField alignment="CENTER" fx:id="campoNome"/>
+                </children>
+            </VBox>
+            <VBox alignment="CENTER">
+                <children>
+                    <Label prefWidth="100" prefHeight="30" />
+                    <TextField alignment="CENTER" fx:id="campoQuantidade"/>
+                </children>
+            </VBox>
+            <BorderPane fx:id="borderBotao">
+                <bottom>
+                    <HBox alignment="CENTER" fx:id="confirmar">
+                        <children>
+                            <Button text="Confirmar" prefWidth="200" prefHeight="40" fx:id="botao" onAction="#enviarFormulario"/>
+                        </children>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+        </children>
+    </VBox>
+</StackPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane xmlns="http://javafx.com/javafx" fx:id="rootVP"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="mercado.controllers.VerProdutos">
+
+    <BorderPane fx:id="root">
+        <top>
+            <HBox alignment="CENTER">
+                <children>
+                    <Label text="PRODUTOS" fx:id="titulo"/>
+                </children>
+            </HBox>
+        </top>
+        <center>
+            <TableView fx:id="tabela"/>
+        </center>
+    </BorderPane>
+</StackPane>

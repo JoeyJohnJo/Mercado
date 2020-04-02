@@ -1,0 +1,83 @@
+#rootConfig {
+    -fx-padding: 0px 0px 0px 20px;
+}
+
+Label {
+    -fx-text-fill: white;
+}
+#t1, #t2, #t3 {
+    -fx-font-size: 30px;
+    -fx-padding: 10px 0px 10px 0px
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+.scroll-pane {
+   -fx-background-color: transparent;
+}
+
+#salvar {
+    -fx-padding: 50px 0px 50px 0px
+}
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-text-align: center;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 2px;
+    -fx-padding: 14px 10px;
+    -fx-max-width: 80px;
+    -fx-min-height: 30px;
+    -fx-outline: none;
+    -fx-text-fill: white;
+    -fx-border-radius: 24px;
+    -fx-padding: 0px;
+}
+.text-field:focused{
+    -fx-border-color: rgb(109, 29, 29);
+}
+#botao {
+    -fx-text-fill: white;
+    -fx-text-align: center;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 2px;
+    -fx-padding: 14px 40px;
+    -fx-outline: none;
+    -fx-color: white;
+    -fx-border-radius: 24px;
+    -fx-background-radius: 22px;
+    -fx-background-color: transparent;
+    -fx-transition: 0.25s;
+}
+
+#botao:hover{
+   -fx-background-color: #8844ee;
+}
+
+.menu-button {
+    -fx-background-color: #8844ee;
+    -fx-text-fill: white;
+}
+.menu-button .label{
+    -fx-text-fill: white;
+}
+
+.menu-item {
+  -fx-background-color: #8844ee;
+}
+.menu-item:hover {
+  -fx-background-color: #a673f2;
+}
+.context-menu {
+    -fx-background-color: #8844ee;
+}
+
+#alerta:hover {
+    -fx-background-color: #a673f2;
+}
+
+#textoAlerta {
+    -fx-font-size: 13px;
+}
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language javascript?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefHeight="600.0" maxWidth="800.0" fx:id="rootDP"
+           fx:controller="mercado.controllers.DefinirProdutos">
+    <VBox fx:id="base" spacing="30">
+        <children>
+            <HBox alignment="CENTER">
+                <children>
+                    <Label text="DEFINIR PRODUTOS" fx:id="titulo"/>
+                </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10">
+                <children>
+                    <TextField fx:id="campoQtd" alignment="CENTER"/>
+                    <TextField fx:id="campoCod" alignment="CENTER"/>
+                    <TextField alignment="CENTER" fx:id="campoNome"/>
+                    <Button text="Adicionar" prefWidth="140" prefHeight="40" fx:id="btnAdd" onAction="#adicionarProduto"/>
+                </children>
+            </HBox>
+            <TableView fx:id="tabela"/>
+            <HBox alignment="CENTER" fx:id="confirmar">
+                <children>
+                    <Button text="Feito" prefWidth="200" prefHeight="40" fx:id="btnFeito" onAction="#salvarInfo"/>
+                </children>
+            </HBox>
+        </children>
+    </VBox>
+</StackPane>
