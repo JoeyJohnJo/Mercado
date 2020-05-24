@@ -2,6 +2,11 @@
 Aplicativo para gerenciamento de mercados, feito em colaboração com https://github.com/SrDiegoRocha. O programa consiste em dois modos:
 Modo Vendas e Modo Administração.
 
+### Instruções
+Colocar o arquivo SQLite em uma pasta "mercado" na sua pasta de usuario.
+Colocar a pasta lib no mesmo diretório que o jar final.
+Caso não rode simplesmente clickando no jar, utilize o arquivo .bat para inicialização
+
 ### Modo Vendas
 Formado por uma tela onde são inseridos os produtos que serão vendidos para o cliente, listando-os e atualizando o preço final da compra
 conforme mais produtos são adicionados. Ao final da listagem de produtos, é carregado uma tela mostrando o preço final e uma caixa de texto
