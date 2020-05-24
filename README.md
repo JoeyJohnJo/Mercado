@@ -3,7 +3,7 @@ Aplicativo para gerenciamento de mercados, feito em colaboração com https://gi
 Modo Vendas e Modo Administração.
 
 ### Instruções
-Colocar o arquivo SQLite em uma pasta "mercado" na sua pasta de usuario.
+Colocar o arquivo SQLite em uma pasta "mercado" na sua pasta de usuario. Exemplo: C:\Users\joeyj\mercado/bancodedasdos.sbd.db
 Colocar a pasta lib no mesmo diretório que o jar final.
 Caso não rode simplesmente clickando no jar, utilize o arquivo .bat para inicialização
 
