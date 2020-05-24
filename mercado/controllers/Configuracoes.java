@@ -8,13 +8,15 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import mercado.Driver;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Properties;
-import java.util.ResourceBundle;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.*;
 
 public class Configuracoes {
 
@@ -26,24 +28,18 @@ public class Configuracoes {
     private StackPane rootConfig;
     @FXML
     BorderPane borderPane;
-    private String local = Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResource("")).getPath();
+    private static String local = System.getProperty("user.home") + "\\Mercado\\";
 
-    public static String temaSelecionado = ResourceBundle.getBundle("mercado.resources.config").getString("Tema");
-    static String atalhoCP = ResourceBundle.getBundle("mercado.resources.config").getString("CadastrarProduto");
-    static String atalhoIE = ResourceBundle.getBundle("mercado.resources.config").getString("InserirEstoque");
-    static String atalhoVP = ResourceBundle.getBundle("mercado.resources.config").getString("VerProdutos");
-    static String atalhoVE = ResourceBundle.getBundle("mercado.resources.config").getString("VerEstoque");
-    static String atalhoVC = ResourceBundle.getBundle("mercado.resources.config").getString("VerClientes");
-    static String atalhoCC = ResourceBundle.getBundle("mercado.resources.config").getString("CadastrarCliente");
-    static String atalhoConfig = ResourceBundle.getBundle("mercado.resources.config").getString("Configuracoes");
-    static String atalhoHV = ResourceBundle.getBundle("mercado.resources.config").getString("Historico");
-    static String atalhoRG = ResourceBundle.getBundle("mercado.resources.config").getString("RendaeGastos");
-    static String atalhoAl = ResourceBundle.getBundle("mercado.resources.config").getString("Alertas");
-    static String atalhoHE = ResourceBundle.getBundle("mercado.resources.config").getString("HistoricoEntrada");
-    static int qtdAlerta = Integer.parseInt(ResourceBundle.getBundle("mercado.resources.config").getString("QtdMinEstoque"));
+    public static String temaSelecionado;
+    static String atalhoCP, atalhoIE,
+            atalhoVP, atalhoVE, atalhoVC,
+            atalhoCC, atalhoConfig, atalhoHV,
+            atalhoRG, atalhoAl, atalhoHE;
+
+    static int qtdAlerta;
     private ArrayList<String> atalhosExistentes = new ArrayList<>();
 
-    private String caminhoConfig = local + "mercado/resources/config.properties";
+    private String caminhoConfig = local + "config.properties";
     private Properties props;
     @FXML
     private MenuButton mTema;
@@ -52,6 +48,7 @@ public class Configuracoes {
 
     @FXML
     private void initialize() throws IOException {
+        loadProps();
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Array de campos de texto
         textFields = new ArrayList<>();
@@ -227,5 +224,30 @@ public class Configuracoes {
             props.setProperty("QtdMinEstoque", tQtdEstoque.getText());
             qtdAlerta = Integer.parseInt(tQtdEstoque.getText());
         }
+    }
+
+    public static void loadProps() {
+        try {
+            File file = new File(local);
+            URL[] urls = new URL[]{file.toURI().toURL()};
+            ClassLoader loader = new URLClassLoader(urls);
+            ResourceBundle rb = ResourceBundle.getBundle("config", Locale.getDefault(), loader);
+            temaSelecionado = rb.getString("Tema");
+            atalhoCP = rb.getString("CadastrarProduto");
+            atalhoIE = rb.getString("InserirEstoque");
+            atalhoVP = rb.getString("VerProdutos");
+            atalhoVE = rb.getString("VerEstoque");
+            atalhoVC = rb.getString("VerClientes");
+            atalhoCC = rb.getString("CadastrarCliente");
+            atalhoConfig = rb.getString("Configuracoes");
+            atalhoHV = rb.getString("Historico");
+            atalhoRG = rb.getString("RendaeGastos");
+            atalhoAl = rb.getString("Alertas");
+            atalhoHE = rb.getString("HistoricoEntrada");
+            qtdAlerta = Integer.parseInt(rb.getString("QtdMinEstoque"));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
     }
 }
