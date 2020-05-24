@@ -4,6 +4,7 @@ Modo Vendas e Modo Administração.
 
 ### Instruções
 Colocar o arquivo SQLite em uma pasta "mercado" na sua pasta de usuario. Exemplo: C:\Users\joeyj\mercado/bancodedasdos.sbd.db
+
 Colocar o arquivo config.properties na mesma pasta "mercado" que o arquivo SQLite.
 
 Colocar a pasta lib no mesmo diretório que o jar final.
