@@ -1,0 +1,48 @@
+.label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+    -fx-padding: 0 0 10px 0;
+}
+#componentString, #productStr {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-padding: 0 0 10px 0;
+}
+#list {
+    -fx-background-color: #212121;
+    -fx-padding: 0 10px 0 10px;
+}
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-text-align: center;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 2px;
+    -fx-padding: 7px 5px;
+    -fx-max-width: 200px;
+    -fx-outline: none;
+    -fx-text-fill: white;
+    -fx-border-radius: 10px;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-text-align: center;
+    -fx-padding: 14px 40px;
+    -fx-outline: none;
+    -fx-color: white;
+    -fx-border-radius: 10px;
+    -fx-background-color: #212121;
+    -fx-transition: 0.25s;
+}
+.button:hover {
+    -fx-background-color: #8844ee;
+}
+
+#total {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 50px;
+    -fx-padding: 0 0 10px 0;
+}

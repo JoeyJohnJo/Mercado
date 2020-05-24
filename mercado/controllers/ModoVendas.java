@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ModoVendas {
-    private String caminhoFinalizarCompra = "../fxml/FinalizarCompra.fxml";
+    private String caminhoFinalizarCompra = "/mercado/fxml/FinalizarCompra.fxml";
     private Parent telaFinalizarCompra = null;
     @FXML StackPane rootVendas;
     @FXML BorderPane col0, col1, col2, col3;
@@ -33,6 +33,8 @@ public class ModoVendas {
     @FXML
     private void initialize() {
         Driver.roots.add(rootVendas);
+        nome.setId("productStr");
+        preco.setId("productStr");
         rootVendas.getStylesheets().add(Configuracoes.temaSelecionado + "modoVendas.css");
         col0.setCenter(codigo);
         col1.setCenter(nome);
@@ -212,10 +214,10 @@ public class ModoVendas {
     private void loadFXML(Parent p, String path) throws IOException {
         if (!rootVendas.getChildren().contains(p)) {
             if (p == null)
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             else {
                 p = null;
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             }
             rootVendas.getChildren().removeAll();
             rootVendas.getChildren().add(p);
@@ -248,9 +250,13 @@ public class ModoVendas {
             HBox.setHgrow(b, Priority.ALWAYS);
             HBox.setHgrow(c, Priority.ALWAYS);
             Label cod = new Label(codigo);
+            cod.setId("componentString");
             Label quant = new Label(String.valueOf(qtd));
+            quant.setId("componentString");
             Label desc = new Label(nome);
+            desc.setId("componentString");
             Label valor = new Label(String.valueOf(preco));
+            valor.setId("componentString");
             this.getChildren().addAll(cod, a, desc, b, valor, c, quant);
         }
 

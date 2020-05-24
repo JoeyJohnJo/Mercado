@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<StackPane fx:id="rootVendas" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mercado.controllers.ModoVendas">
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="rootVendas" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mercado.controllers.ModoVendas">
     <BorderPane prefHeight="200.0" prefWidth="200.0">
         <top>
             <GridPane maxHeight="100.0" prefHeight="100.0" prefWidth="900.0" BorderPane.alignment="CENTER">
@@ -17,50 +19,59 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <BorderPane prefHeight="200.0" prefWidth="200.0" fx:id="col0">
+                    <BorderPane fx:id="col0" prefHeight="200.0" prefWidth="200.0">
                         <top>
                             <Label text="CODIGO" BorderPane.alignment="CENTER" />
                         </top>
                     </BorderPane>
-                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" fx:id="col1">
+                    <BorderPane fx:id="col1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                         <top>
                             <Label text="NOME" BorderPane.alignment="CENTER" />
                         </top>
                     </BorderPane>
-                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" fx:id="col2">
+                    <BorderPane fx:id="col2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                         <top>
                             <Label text="PREÇO" BorderPane.alignment="CENTER" />
                         </top>
                     </BorderPane>
-                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" fx:id="col3">
+                    <BorderPane fx:id="col3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
                         <top>
                             <Label text="QUANTIDADE" BorderPane.alignment="CENTER" />
                         </top>
                     </BorderPane>
                 </children>
+            <BorderPane.margin>
+               <Insets />
+            </BorderPane.margin>
+            <padding>
+               <Insets top="10.0" />
+            </padding>
             </GridPane>
         </top>
         <center>
-            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="278.0" prefWidth="900.0">
-                <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="207.0" prefWidth="900.0" BorderPane.alignment="CENTER" fx:id="list">
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" prefHeight="278.0" prefWidth="900.0">
+                <VBox fx:id="list" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="207.0" prefWidth="900.0" BorderPane.alignment="CENTER">
                 </VBox>
             </ScrollPane>
         </center>
         <bottom>
             <HBox prefHeight="39.0" prefWidth="900.0" BorderPane.alignment="CENTER">
                 <children>
-                    <Label text="R$ Total:  ">
+                    <Label id="total" text="R$ Total:  ">
+                        <font>
+                            <Font size="50.0" />
+                        </font>
+                  <HBox.margin>
+                     <Insets left="30.0" />
+                  </HBox.margin>
+                    </Label>
+                    <Label id="total" fx:id="total" text="00.00">
                         <font>
                             <Font size="50.0" />
                         </font>
                     </Label>
-                    <Label text="00.00" fx:id="total">
-                        <font>
-                            <Font size="50.0" />
-                        </font>
-                    </Label>
-                    <Region HBox.hgrow="ALWAYS"/>
-                    <Button text="FINALIZAR" fx:id="finalizar" minHeight="75"/>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="finalizar" minHeight="75" text="FINALIZAR" />
                 </children>
             </HBox>
         </bottom>

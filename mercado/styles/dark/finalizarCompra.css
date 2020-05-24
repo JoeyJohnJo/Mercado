@@ -1,0 +1,9 @@
+#rootFinalizar {
+    -fx-background-color: #212121;
+}
+.label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+    -fx-padding: 0 0 10px 0;
+}

@@ -219,7 +219,7 @@ public class InserirEstoque {
                             "\", \"" + quantidade + "\")" +
                             " ON CONFLICT(Codigo) DO UPDATE SET Quantidade = Quantidade + " + quantidade + ";");
                     bd.insertRowInto("HistEstoque", DateTimeFormatter.ofPattern("dd/MM/yyyy").format(LocalDateTime.now()),
-                            DateTimeFormatter.ofPattern("HH:mm:ss").format(LocalDateTime.now()), nome, precoCompra);
+                            DateTimeFormatter.ofPattern("HH:mm:ss").format(LocalDateTime.now()), nome, precoCompra, quantidade);
                     // Alerta pro usuario saber que teve sucesso
                     Alerta alerta = new Alerta(500, 200,
                             "ESTOQUE ATUALIZADO COM SUCESSO");

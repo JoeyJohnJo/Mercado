@@ -35,7 +35,7 @@ public class DetalhesCliente {
     public static int selectedRowID;
     private VendaDO rowData;
     private Parent telaDetalhesCompra = null;
-    private String caminhoDetalhesCompra = "../fxml/DetalhesCompra.fxml";
+    private String caminhoDetalhesCompra = "/mercado/fxml/DetalhesCompra.fxml";
 
     @FXML
     private void initialize() {
@@ -74,10 +74,10 @@ public class DetalhesCliente {
     private void loadFXML(Parent p, String path) throws IOException {
         if (!rootDCl.getChildren().contains(p)) {
             if (p == null)
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             else {
                 p = null;
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             }
 
             rootDCl.getChildren().add(p);

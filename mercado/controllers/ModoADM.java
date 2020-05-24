@@ -17,17 +17,17 @@ import mercado.graficos.Alerta;
 
 public class ModoADM {
 
-    private String caminhoCadastrarCliente = "../fxml/CadastrarCliente.fxml";
-    private String caminhoVerProdutos = "../fxml/VerProdutos.fxml";
-    private String caminhoCadastrarProduto = "../fxml/CadastrarProduto.fxml";
-    private String caminhoVerEstoque = "../fxml/VerEstoque.fxml";
-    private String caminhoInserirEstoque = "../fxml/InserirEstoque.fxml";
-    private String caminhoConfig = "../fxml/Configuracoes.fxml";
-    private String caminhoAlertas = "../fxml/Alertas.fxml";
-    private String caminhoHistorico = "../fxml/Historico.fxml";
-    private String caminhoEntrada = "../fxml/HistEntradas.fxml";
-    private String caminhoRendaGastos = "../fxml/RendaGastos.fxml";
-    private String caminhoVerClientes = "../fxml/VerClientes.fxml";
+    private String caminhoCadastrarCliente = "/mercado/fxml/CadastrarCliente.fxml";
+    private String caminhoVerProdutos = "/mercado/fxml/VerProdutos.fxml";
+    private String caminhoCadastrarProduto = "/mercado/fxml/CadastrarProduto.fxml";
+    private String caminhoVerEstoque = "/mercado/fxml/VerEstoque.fxml";
+    private String caminhoInserirEstoque = "/mercado/fxml/InserirEstoque.fxml";
+    private String caminhoConfig = "/mercado/fxml/Configuracoes.fxml";
+    private String caminhoAlertas = "/mercado/fxml/Alertas.fxml";
+    private String caminhoHistorico = "/mercado/fxml/Historico.fxml";
+    private String caminhoEntrada = "/mercado/fxml/HistEntradas.fxml";
+    private String caminhoRendaGastos = "/mercado/fxml/RendaGastos.fxml";
+    private String caminhoVerClientes = "/mercado/fxml/VerClientes.fxml";
     private static Parent telaVerClientes = null;
     private static Parent telaRendaGastos = null;
     private static Parent telaVerProdutos = null;
@@ -39,7 +39,6 @@ public class ModoADM {
     private static Parent telaHistorico = null;
     private static Parent telaHistEntrada = null;
     private Parent telaConfig = null;
-    private URL html;
     @FXML private StackPane rootADM;
     @FXML private VBox vbox, bBar;
     @FXML private BorderPane ribbon;
@@ -56,8 +55,8 @@ public class ModoADM {
         Alertas alertas = new Alertas();
         Driver.roots.add(rootADM);
         rootADM.getStylesheets().add(Configuracoes.temaSelecionado + "startScene.css");
-        telaVerEstoque = FXMLLoader.load(getClass().getResource(caminhoVerEstoque));
-        telaVerProdutos = FXMLLoader.load(getClass().getResource(caminhoVerProdutos));
+        telaVerEstoque = new FXMLLoader().load(getClass().getResourceAsStream(caminhoVerEstoque));
+        telaVerProdutos = new FXMLLoader().load(getClass().getResourceAsStream(caminhoVerProdutos));
         buttons = new Button[]{bEstoque, bAddEstoque, bProdutos, bAddProdutos, bClientes, bAddClientes, bVendas, bGastos, bAlertas, bEntrada};
         for (HBox hb : alertas.getAlertas()) {
             vbox.getChildren().add(hb);
@@ -161,10 +160,10 @@ public class ModoADM {
          * limoa este conteudo para que somente a janela desejada apareça*/
         if (!contentPane.getChildren().contains(p)) {
             if (p == null)
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             else {
                 p = null;
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             }
             contentPane.getChildren().clear();
             contentPane.setCenter(p);

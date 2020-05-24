@@ -1,0 +1,44 @@
+#titulo {
+    -fx-font-size: 30px;
+    -fx-padding: 10px 0 40px 0
+}
+Label {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+#botao {
+    -fx-text-fill: black;
+    -fx-text-align: center;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 2px;
+    -fx-padding: 14px 40px;
+    -fx-outline: none;
+    -fx-color: white;
+    -fx-border-radius: 24px;
+    -fx-background-radius: 22px;
+    -fx-background-color: transparent;
+    -fx-transition: 0.25s;
+}
+
+#botao:hover{
+   -fx-background-color: blue;
+}
+
+#borderBotao{
+    -fx-padding: 50px;
+}
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-text-align: center;
+    -fx-border-color: #8844ee;
+    -fx-border-width: 2px;
+    -fx-padding: 14px 10px;
+    -fx-max-width: 200px;
+    -fx-outline: none;
+    -fx-text-fill: black;
+    -fx-border-radius: 24px;
+}
+.text-field:focused{
+    -fx-border-color: rgb(109, 29, 29);
+}

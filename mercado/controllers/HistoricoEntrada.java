@@ -20,6 +20,7 @@ public class HistoricoEntrada {
     private TableColumn<Produto, String> hora = new TableColumn<>("Horario");
     private TableColumn<Produto, String> produto = new TableColumn<>("Produto");
     private TableColumn<Produto, String> preco = new TableColumn<>("Preco de Compra");
+    private TableColumn<Produto, String> quantidade = new TableColumn<>("Quantidade");
     private static ArrayList<EntradaDO> entradas = new ArrayList<>();
     private static ObservableList<EntradaDO> listaEntradas = FXCollections.observableArrayList();
 
@@ -27,11 +28,12 @@ public class HistoricoEntrada {
     private void initialize() {
         Driver.roots.add(rootHE);
         rootHE.getStylesheets().add(Configuracoes.temaSelecionado + "tabela.css");
-        tabela.getColumns().addAll(data, hora, produto, preco);
+        tabela.getColumns().addAll(data, hora, produto, preco, quantidade);
         data.setCellValueFactory(new PropertyValueFactory<>("data"));
         hora.setCellValueFactory(new PropertyValueFactory<>("horario"));
         produto.setCellValueFactory(new PropertyValueFactory<>("produto"));
         preco.setCellValueFactory(new PropertyValueFactory<>("preco"));
+        quantidade.setCellValueFactory((new PropertyValueFactory<>("quantidade")));
         tabela.setItems(listaEntradas);
         tabela.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         buscarHistorico();
@@ -42,7 +44,12 @@ public class HistoricoEntrada {
         try {
             ResultSet rs = bd.select("SELECT * FROM HistEstoque");
             while (rs.next()) {
-                entradas.add(new EntradaDO(rs.getString("Data"), rs.getString("Horario"), rs.getString("Produto"), rs.getDouble("PrecoCompra")));
+                entradas.add(
+                        new EntradaDO(rs.getString("Data"),
+                                rs.getString("Horario"),
+                                rs.getString("Produto"),
+                                rs.getDouble("PrecoCompra"),
+                                rs.getInt("Quantidade")));
             }
             rs.close();
             listaEntradas.clear();

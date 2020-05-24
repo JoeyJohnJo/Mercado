@@ -48,7 +48,7 @@ public class Alertas {
             this.setId("alerta");
             this.getStylesheets().add(Configuracoes.temaSelecionado+ "config.css");
             Label l = new Label("ATENÇÃO! O produto " + p.getNome() + " está em quantidade abaixo de " + Configuracoes.qtdAlerta);
-            ImageView imagem = new ImageView(new Image(getClass().getResourceAsStream("../resources/images/alerta.png"),
+            ImageView imagem = new ImageView(new Image(getClass().getResourceAsStream("/mercado/resources/images/alerta.png"),
                     70, 70, false, false));
             l.setMinSize(900,70);
             l.setId("textoAlerta");

@@ -25,7 +25,7 @@ public class VerClientes {
 
     private Cliente rowData;
     private Parent telaDetalhesCliente = null;
-    private String caminhoDetalhesCliente = "../fxml/DetalhesCliente.fxml";
+    private String caminhoDetalhesCliente = "/mercado/fxml/DetalhesCliente.fxml";
 
     private TableColumn<Cliente, String> nome = new TableColumn<>("NOME");
     private TableColumn<Cliente, String> endereco = new TableColumn<>("ENDEREÇO");
@@ -82,10 +82,10 @@ public class VerClientes {
     private void loadFXML(Parent p, String path) throws IOException {
         if (!rootVC.getChildren().contains(p)) {
             if (p == null)
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             else {
                 p = null;
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             }
 
             rootVC.getChildren().add(p);

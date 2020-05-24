@@ -1,33 +1,37 @@
 package mercado.controllers;
-
 import java.sql.*;
 
 class BancoDeDados {
 
 	private Connection conexao;
-	private String url = "jdbc:sqlite:src/mercado/resources/bancodedados.sbd.db";
-    private static class Criador {
+	private String url = "jdbc:sqlite:" + System.getProperty("user.home") + "\\Mercado\\bancodedados.sbd.db";
+
+	private static class Criador {
         private static final BancoDeDados INSTANCE = new BancoDeDados();
     }
     private BancoDeDados() {
-        try {
-            conectar();
-        }
-        catch (SQLException e) {
-            System.out.println("Could not connect to " + url);
-        }
+        conectar();
     }
     static BancoDeDados getInstance() {
         return Criador.INSTANCE;
     }
     
-    private void conectar() throws SQLException{
-    if (conexao == null) {
-      conexao = DriverManager.getConnection(url);
-    }
-    else {
-      System.out.println("Já conectado");
-    }
+    private void conectar(){
+        System.out.println(url);
+        try {
+            if (conexao == null) {
+                conexao = DriverManager.getConnection(url);
+                if (conexao != null) {
+                    System.out.println("connected");
+                }
+            }
+            else {
+                System.out.println("Já conectado");
+            }
+        } catch (SQLException e) {
+            System.out.println("could not connect");
+            System.out.println("Connection object is:" + conexao);
+        }
     }
     
     ResultSet select(String command) throws SQLException{
@@ -95,51 +99,4 @@ class BancoDeDados {
 
     }
 
-    static class DataTypes {
-        static final String TEXT = "TEXT";
-        static final String CHAR = "CHAR";
-        static final String VARCHAR = "VARCHAR";
-        static final String BINARY = "BINARY";
-        static final String VARBINARY = "BINARY";
-        static final String TINYBLOB = "TINYBLOB";
-        static final String TINYTEXT = "TINYTEXT";
-        static final String BLOB = "BLOB";
-        static final String MEDIUMTEXT = "MEDIUMTEXT";
-        static final String LONGTEXT = "LONGTEXT";
-        static final String LONGBLOB = "LONGBLOB";
-        static final String BIT = "BIT";
-        static final String TINYBIT = "TINYBIT";
-        static final String BOOL = "BOOL";
-        static final String BOOLEAN = "BOOLEAN";
-        static final String MEDIUMINT = "MEDIUMINT";
-        static final String INT = "INT";
-        static final String INTEGER = "INTEGER";
-        static final String BIGINT = "BIGINT";
-        static final String FLOAT = "FLOAT";
-        static final String DOUBLE = "DOUBLE";
-        static final String DECIMAL = "DECIMAL";
-        static final String DEC = "DEC";
-
-        static String[] types = new String[] {TEXT, CHAR, VARCHAR, BINARY, VARBINARY, TINYBLOB, BLOB,
-                MEDIUMTEXT, TINYTEXT, LONGTEXT, LONGBLOB, BIT, TINYBIT, BOOL, BOOLEAN, MEDIUMINT, INT,
-                INTEGER, BIGINT, FLOAT, DOUBLE, DECIMAL, DEC};
-
-        static String VARCHAR(int i) { return "varchar(" + i + ")"; }
-        static String CHAR(int i) { return "char(" + i + ")";}
-        static String BINARY(int i) {return "binary(" + i + ")";}
-        static String VARBINARY(int i) {return "varbinary(" + i + ")";}
-        static String TEXT(int i) {return "text(" + i + ")";}
-        static String BLOB(int i) {return "blob(" + i + ")";}
-        static String BIT(int i) {return "bit(" + i + ")";}
-        static String TINYINT(int i) {return "TINYINT(" + i + ")";}
-        static String SMALLINT(int i) {return "SMALLINT(" + i + ")";}
-        static String MEDIUMINT(int i) {return "MEDIUMINT(" + i + ")";}
-        static String INT(int i) {return "INT(" + i + ")";}
-        static String INTEGER(int i) {return "INTEGER(" + i + ")";}
-        static String BIGINT(int i) {return "BIGINT(" + i + ")";}
-        static String FLOAT(int i) {return "FLAOT(" + i + ")";}
-        static String FLOAT(int i, int j) {return "FLOAT(" + i + ", "+ j + ")";}
-        static String DECIMAL(int i, int j) {return "FLOAT(" + i + ", "+ j + ")";}
-        static String DEC(int i, int j) {return "FLOAT(" + i + ", "+ j + ")";}
-    }
 }

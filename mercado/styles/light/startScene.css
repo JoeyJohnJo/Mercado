@@ -1,0 +1,46 @@
+#top Button {
+    -fx-background-color: #C2B9B0;
+    -fx-text-fill: black;
+}
+#top Button:hover {
+    -fx-background-color: blue;
+}
+#top {
+    -fx-background-color: #C2B9B0;
+    -fx-border-style: solid;
+    -fx-border-color: transparent transparent #E7717D transparent;
+}
+#ribbon Button {
+    -fx-background-color: #C2B9B0;
+    -fx-text-fill: black;
+    -fx-border-color: transparent transparent #E7717D transparent;
+}
+
+#ribbon Button:hover {
+
+    -fx-background-color: blue;
+
+}
+#ribbon {
+    -fx-background-color: #C2B9B0;
+    -fx-border-style: solid;
+    -fx-border-color: transparent transparent #E7717D transparent;
+}
+
+#contentPane {
+    -fx-background-color: #C2CAD0;
+}
+
+#config {
+   -fx-background-image: url("../../resources/images/config.png");
+   -fx-background-size: 30px;
+   -fx-background-repeat: no-repeat;
+   -fx-background-position: 50%;
+}
+
+#min {
+    -fx-background-image: url("../../resources/images/minLight.png");
+    -fx-background-size: 15px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 100%;
+}

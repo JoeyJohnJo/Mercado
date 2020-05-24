@@ -1,98 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<StackPane fx:id="rootRG" prefWidth="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mercado.controllers.RendaGastos">
-   <children>
-       <BorderPane prefWidth="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
-           <center>
-               <VBox>
-                   <VBox fx:id="vbRenda" maxWidth="1.7976931348623157E308">
-                       <children>
-                           <Label text="Renda" />
-                           <GridPane  maxWidth="1.7976931348623157E308">
-                               <columnConstraints>
-                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                               </columnConstraints>
-                               <rowConstraints>
-                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                               </rowConstraints>
-                               <children>
-                                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Diária" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" onAction="#rendaDiaria"/>
-                                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Semanal" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" onAction="#rendaSemanal"/>
-                                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Mensal" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" onAction="#rendaMensal"/>
-                                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Todos os tempos" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" onAction="#rendaTodosOsTempos"/>
-                               </children>
-                           </GridPane>
-                           <Region VBox.vgrow="ALWAYS"/>
-                           <Label fx:id="labelRenda"/>
-                       </children>
-                   </VBox>
-                   <VBox fx:id="vbGasto" maxWidth="1.7976931348623157E308">
-                       <Label text="Gastos"/>
-                       <GridPane>
-                           <columnConstraints>
-                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                           </columnConstraints>
-                           <rowConstraints>
-                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                           </rowConstraints>
-                           <children>
-                               <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                                       mnemonicParsing="false" text="Diária" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS"
-                                       onAction="#gastoDiario"/>
-                               <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                                       mnemonicParsing="false" text="Semanal" GridPane.columnIndex="1"
-                                       GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" onAction="#gastoSemanal"/>
-                               <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                                       mnemonicParsing="false" text="Mensal" GridPane.columnIndex="2"
-                                       GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" onAction="#gastoMensal"/>
-                               <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                                       mnemonicParsing="false" text="Todos os tempos" GridPane.columnIndex="3"
-                                       GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" onAction="#gastoTodosOsTempos"/>
-                           </children>
-                       </GridPane>
-                       <Region VBox.vgrow="ALWAYS"/>
-                       <Label fx:id="labelGasto"/>
-                   </VBox>
-                   <VBox fx:id="vbLiquido" maxWidth="1.7976931348623157E308">
-                       <Label text="Liquido"/>
-                       <GridPane>
-                           <columnConstraints>
-                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                           </columnConstraints>
-                           <rowConstraints>
-                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                           </rowConstraints>
-                           <children>
-                               <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                                       mnemonicParsing="false" text="Diária" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS"
-                                       onAction="#liquidoDiario"/>
-                               <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                                       mnemonicParsing="false" text="Semanal" GridPane.columnIndex="1"
-                                       GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" onAction="#liquidoSemanal"/>
-                               <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                                       mnemonicParsing="false" text="Mensal" GridPane.columnIndex="2"
-                                       GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" onAction="#liquidoMensal"/>
-                               <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                                       mnemonicParsing="false" text="Todos os tempos" GridPane.columnIndex="3"
-                                       GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" onAction="#liquidoTodosOsTempos"/>
-                           </children>
-                       </GridPane>
-                       <Region VBox.vgrow="ALWAYS"/>
-                       <Label fx:id="labelLiquido"/>
-                   </VBox>
-               </VBox>
-           </center>
-       </BorderPane>
-   </children>
+
+<StackPane fx:id="rootRG" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mercado.controllers.RendaGastos">
+  <BorderPane fx:id="root" prefHeight="400.0" prefWidth="600.0">
+     <top>
+        <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+           <padding>
+              <Insets left="30.0" />
+           </padding>
+           <children>
+              <Label text="Estatísticas" />
+           </children>
+        </HBox>
+     </top>
+     <center>
+        <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <VBox fx:id="vbContent" BorderPane.alignment="CENTER" spacing="50.0">
+                <padding>
+                    <Insets left="30.0" />
+                </padding>
+                <!-- Estatísticas do dia-->
+                <VBox>
+                    <HBox>
+                        <padding><Insets right="30.0"/> </padding>
+                        <Label text="Hoje" />
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <VBox spacing="10.0">
+                            <HBox spacing="10.0" alignment="CENTER_RIGHT">
+                                <padding> <Insets right="30"/> </padding>
+                                <Button id="previousVisualization" onAction="#previousDaily"/>
+                                <Button id="nextVisualization" onAction="#nextDaily"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                    <VBox fx:id="dailyContainer"/>
+                    <HBox>
+                        <VBox>
+                            <HBox>
+                                <Label id="descText" text="Renda: R$" />
+                                <Label fx:id="labelDailyIn" id="descText"/>
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Gasto: R$ " />
+                                <Label fx:id="labelDailyOut" id="descText" />
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Lucro: R$" />
+                                <Label fx:id="labelDailyProfit" id="descText" />
+                            </HBox>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <VBox>
+                            <padding>
+                                <Insets right="30.0"/>
+                            </padding>
+                            <HBox>
+                                <Label id="descText" text="Qtd de vendas: " />
+                                <Label fx:id="labelDailySales" id="descText" />
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Entradas: " />
+                                <Label fx:id="labelDailyInsertions" id="descText" />
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                <!-- Estatísticas do dia-->
+
+                <!-- Estatísticas da semana -->
+                <VBox>
+                    <HBox>
+                        <padding><Insets right="30.0"/> </padding>
+                        <Label text="Esta semana" />
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <VBox spacing="10.0">
+                            <HBox spacing="10.0" alignment="CENTER_RIGHT">
+                                <padding> <Insets right="30"/> </padding>
+                                <Button id="previousVisualization" onAction="#previousWeekly"/>
+                                <Button id="nextVisualization" onAction="#nextWeekly"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                    <VBox fx:id="weeklyContainer"/>
+                    <HBox>
+                        <VBox>
+                            <HBox>
+                                <Label id="descText" text="Renda: R$ " />
+                                <Label fx:id="labelWeeklyIn" id="descText" />
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Gasto: R$" />
+                                <Label fx:id="labelWeeklyOut" id="descText" />
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Lucro: R$" />
+                                <Label fx:id="labelWeeklyProfit" id="descText" />
+                            </HBox>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <VBox>
+                            <padding>
+                                <Insets right="30.0"/>
+                            </padding>
+                            <HBox>
+                                <Label id="descText" text="Qtd de vendas: " />
+                                <Label fx:id="labelWeeklySales" id="descText"/>
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Entradas: " />
+                                <Label fx:id="labelWeeklyInsertions" id="descText" />
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                <!-- Estatísticas da semana -->
+
+                <!-- Estatísticas do mês -->
+                <VBox>
+                    <HBox>
+                        <padding><Insets right="30.0"/> </padding>
+                        <Label text="Este mês" />
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <VBox spacing="10.0">
+                            <HBox spacing="10.0" alignment="CENTER_RIGHT">
+                                <padding> <Insets right="30"/> </padding>
+                                <Button id="previousVisualization" onAction="#previousMonthly"/>
+                                <Button id="nextVisualization" onAction="#nextMonthly"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                    <VBox fx:id="monthlyContainer"/>
+                    <HBox>
+                        <VBox>
+                            <HBox>
+                                <Label id="descText" text="Renda: R$  " />
+                                <Label fx:id="labelMonthlyIn" id="descText" />
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Gasto: R$ " />
+                                <Label fx:id="labelMonthlyOut" id="descText" />
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Lucro: R$ " />
+                                <Label fx:id="labelMonthlyProfit" id="descText" />
+                            </HBox>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <VBox>
+                            <padding>
+                                <Insets right="30.0"/>
+                            </padding>
+                            <HBox>
+                                <Label id="descText" text="Qtd de vendas: " />
+                                <Label fx:id="labelMonthlySales" id="descText" />
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Entradas: " />
+                                <Label fx:id="labelMonthlyInsertions" id="descText" />
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                <!-- Estatísticas do mês -->
+
+                <!-- Estatísticas de todos os tempos -->
+                <VBox>
+                    <HBox>
+                        <padding><Insets right="30.0"/> </padding>
+                        <Label text="Todos os tempos" />
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <VBox spacing="10.0">
+                            <HBox spacing="10.0" alignment="CENTER_RIGHT">
+                                <padding> <Insets right="30"/> </padding>
+                                <Button id="previousVisualization" onAction="#previousAllTime"/>
+                                <Button id="nextVisualization" onAction="#nextAllTime"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                    <VBox fx:id="allTimeContainer"/>
+                    <HBox>
+                        <VBox>
+                            <HBox>
+                                <Label id="descText" text="Renda: R$ " />
+                                <Label fx:id="labelAllTimeIn" id="descText" />
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Gasto: R$ " />
+                                <Label fx:id="labelAllTimeOut" id="descText" />
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Lucro: R$ " />
+                                <Label fx:id="labelAllTimeProfit" id="descText" />
+                            </HBox>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <VBox>
+                            <padding>
+                                <Insets right="30.0"/>
+                            </padding>
+                            <HBox>
+                                <Label id="descText" text="Qtd de vendas: " />
+                                <Label fx:id="labelAllTimeSales" id="descText"/>
+                            </HBox>
+                            <HBox>
+                                <Label id="descText" text="Entradas: " />
+                                <Label fx:id="labelAllTimeInsertions" id="descText" />
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                <!-- Estatísticas de todos os tempos -->
+            </VBox>
+        </ScrollPane>
+     </center>
+  </BorderPane>
 </StackPane>

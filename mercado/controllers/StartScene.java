@@ -22,8 +22,8 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class StartScene {
-    private String ModoADM = "../fxml/ModoADM.fxml";
-    private String ModoVendas = "../fxml/ModoVendas.fxml";
+    private String ModoADM = "/mercado/fxml/ModoADM.fxml";
+    private String ModoVendas = "/mercado/fxml/ModoVendas.fxml";
     private static Parent telaModoADM = null;
     private static Parent telaModoVendas = null;
     @FXML private StackPane rootSS;
@@ -35,6 +35,7 @@ public class StartScene {
     @FXML
     private void initialize() {
         Driver.roots.add(rootSS);
+
         slider.valueProperty().addListener((observable, oldValue, newValue) -> {
             if(slider.getValue() == 1){
                 try {
@@ -54,6 +55,7 @@ public class StartScene {
             }
         });
         rootSS.getStylesheets().add(Configuracoes.temaSelecionado + "startScene.css");
+        slider.setValue(1.0);
     }
     @FXML
     private void arrastar() {
@@ -67,13 +69,8 @@ public class StartScene {
     @FXML
     private void maximize() {
         Stage s = (Stage) borderPane.getScene().getWindow();
-        if (s.isFullScreen()) {
-            s.setFullScreen(false);
-
-        }
-        else {
-            s.setFullScreen(true);
-        }
+        if (s.isFullScreen()) s.setFullScreen(false);
+        else s.setFullScreen(true);
     }
     @FXML
     private void close() {
@@ -81,7 +78,7 @@ public class StartScene {
         s.close();
     }
     static void filtroDeNumero(TextField tf, String a, String b) {
-        if (!b.matches("\\d{0,9}([\\.]\\d{0,2})?")) {
+        if (!b.matches("\\d{0,9}([.]\\d{0,2})?")) {
             tf.setText(a);
         }
     }
@@ -93,10 +90,10 @@ public class StartScene {
          * limoa este conteudo para que somente a janela desejada apareca*/
         if (!contentPane.getChildren().contains(p)) {
             if (p == null)
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             else {
                 p = null;
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             }
             contentPane.getChildren().clear();
             contentPane.setCenter(p);

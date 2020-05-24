@@ -21,7 +21,7 @@ import java.sql.SQLException;
 
 public class CadastrarCliente {
 
-    private String caminhoDefinirProdutos = "../fxml/DefinirProdutos.fxml";
+    private String caminhoDefinirProdutos = "/mercado/fxml/DefinirProdutos.fxml";
     private Parent telaDefinirProdutos = null;
     @FXML VBox base;
     @FXML TextField campoNome, campoEndereco, campoTelefone;
@@ -171,10 +171,10 @@ public class CadastrarCliente {
         parent = (BorderPane) rootCC.getParent();
         if (!parent.getChildren().contains(p)) {
             if (p == null)
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             else {
                 p = null;
-                p = FXMLLoader.load(getClass().getResource(path));
+                p = new FXMLLoader().load(getClass().getResourceAsStream(path));
             }
             parent.getChildren().clear();
             parent.setCenter(p);

@@ -1,0 +1,153 @@
+#vbContent{
+    -fx-border-color: transparent transparent #8844EE transparent;
+    -fx-background-color: #303030;
+}
+#scrollPane {
+    -fx-background-color:transparent;
+}
+
+#nextVisualization {
+    -fx-background-image: url("../../resources/images/forward.png");
+    -fx-background-size: 12px;
+    -fx-min-width: 30px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-border-color: #8844EE #8844EE #8844EE #8844EE;
+}
+#previousVisualization {
+    -fx-background-image: url("../../resources/images/back.png");
+    -fx-background-size: 12px;
+    -fx-min-width: 30px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-border-color: #8844EE #8844EE #8844EE #8844EE;
+}
+
+.button {
+    -fx-background-color: #212121;
+    -fx-text-fill: white;
+    -fx-border-color: #8844EE #8844EE #8844EE transparent;
+}
+.button:hover {
+   -fx-background-color: #8844EE;
+}
+#descText {
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-padding: 0 0 10px 0;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+    -fx-padding: 0 0 10px 0;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color :transparent;
+    -fx-border-color :transparent;
+}
+
+
+.scroll-bar:vertical .track{
+    -fx-background-color :transparent;
+    -fx-border-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :1.5em;
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #8844EE;
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 1.5em;
+}
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #8844EE;
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 1.5em;
+}
+
+.radio-button {
+    -fx-text-fill: white;
+}
+
+.radio-button .radio{
+    -fx-border-width : 1px ;
+    -fx-border-color : #000 ;
+    -fx-background-color : white ;
+    -fx-background-image : null ;
+    -fx-border-radius : 15px ;
+}
+.radio-button .radio:selected{
+    -fx-background-color : white ;
+    -fx-background-image : null ;
+}
+.radio-button -radio:armed{
+    -fx-background-color : white ;
+    -fx-background-image : null ;
+}
+.radio-button -radio:determinate{
+    -fx-background-color : white ;
+    -fx-background-image : null ;
+}
+.radio-button -radio:indeterminate{
+    -fx-background-color : white ;
+    -fx-background-image : null ;
+}
+
+.chart {
+    -fx-padding: 10px;
+}
+
+.axis-label {
+  -fx-text-fill: #4682b4;
+  -fx-font-size: 15px;
+}
+
+.chart-legend {
+   -fx-background-color:  transparent;
+}
+
+.chart-legend-item-symbol{
+   -fx-background-radius: 0;
+}
+
+.chart-legend-item{
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: #3278fa;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: #3278fa;
+}
+.chart-alternative-row-fill {
+    -fx-fill: transparent;
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+}
